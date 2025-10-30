@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000000;
+    color: #fff;
+}
+
+header {
+    background-color: #2a2929;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+
+/* === ASIDE IZQUIERDO === */
+
+
+
+
+aside {
+    width: 250px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 2px solid #0d0d0d;
+}
+
+aside p {
+    margin: 8px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+aside input {
+    width: 180px;
+    background-color: #d9d9d9;
+    border: none;
+    padding: 6px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.estadisticas {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.estadisticas p {
+    font-size: 14px;
+    margin: 3px 0;
+}
+
+aside button {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+aside button:hover {
+    background-color: #ff6e6e;
+    color: #fff;
+}
+
+.opciones {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.opciones p {
+    cursor: pointer;
+    margin: 5px 0;
+    color: #ddd;
+}
+
+.opciones p:hover {
+    text-decoration: underline;
+}
+
+/* === CONTENIDO CENTRAL === */
+
+
+
+
+
+
+.contenido {
+    flex: 1;
+    background-color: #0f0f0f;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.highlights, .notas {
+    background-color: #1c1c1c;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+}
+
+.highlights h3,
+.notas h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+.caja {
+    background-color: #cfcfcf;
+    width: 60%;
+    height: 160px;
+    margin: 15px auto;
+    border-radius: 4px;
+}
+
+
+
+
