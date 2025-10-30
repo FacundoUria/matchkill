@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fila_aliado = $resultado_aliado->fetch_assoc();
         $nombreAliado = $fila_aliado['usuario'];
     } else {
-        $nombreAliado = "No existe un jugador con ese MatchCode.";
+        $nombreAliado = "No existe un jugador con ese MatchCode";
     }
 }
 ?>
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>
             <?php 
                 if (!empty($nombreAliado)) {
-                    echo "Aliado encontrado: " . htmlspecialchars($nombreAliado);
+                    echo "$nombreAliado"  ;
                 }
             ?>
             </p>

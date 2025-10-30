@@ -62,23 +62,5 @@ a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 720px) {
-    div {
-        width: 92%;
-        max-width: 340px;
-        margin: 20px auto;
-        padding: 20px;
-    }
 
-    input[type="text"],
-    input[type="password"] {
-        width: 95%;
-        padding: 8px;
-        font-size: 13px;
-    }
 
-    button {
-        padding: 7px 16px;
-        font-size: 12px;
-    }
-}

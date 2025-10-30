@@ -17,15 +17,15 @@ if ($conexion->connect_error) {
     die("La conexión ha fallado: " . $conexion->connect_error);
 }
 
-// Insertar datos en la tabla
+
 $sql = "INSERT INTO jugadores (usuario, contraseña) VALUES ('$usuario', '$contraseña')";
 
-if ($conexion->query($sql) === TRUE) {
-    // Registro exitoso → redirigir al login
-    header("Location: ../login/index.html");
-    exit();
-} else {
-    echo "❌ Error al registrar: " . $conexion->error;
-}
+    if ($conexion->query($sql) === TRUE) {
+        
+        header("Location: ../login/index.html");
+        exit();
+    } else {
+        echo "❌ Error al registrar: " . $conexion->error;
+    }
 ?>
 
