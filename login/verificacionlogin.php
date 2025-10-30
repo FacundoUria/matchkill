@@ -9,13 +9,13 @@ $resultado = $conexion->query($sql);
 
 if ($resultado->num_rows > 0) {
     session_start();
-    $_SESSION['usuario'] = $usuario; // Guarda el usuario logueado
+    $_SESSION['usuario'] = $usuario; 
 
     header("Location: ../principal/principal.php");
     exit();
 } else {
     echo "<script>
-            alert('❌ Usuario o contraseña incorrectos.');
+            alert(' Usuario o contraseña incorrectos.');
             window.location.href = './index.html';
           </script>";
 }

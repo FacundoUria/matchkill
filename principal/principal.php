@@ -2,10 +2,10 @@
 include("../conexion.php");
 session_start();
 
-// Recuperar el usuario de la sesión
+
 $usuario = $_SESSION['usuario'] ?? 'Invitado';
 
-// Buscar SOLO ese usuario en la base
+
 $sql = "SELECT * FROM jugadores WHERE usuario = '$usuario' LIMIT 1";
 $resultado = $conexion->query($sql);
 
@@ -17,7 +17,36 @@ if ($resultado->num_rows > 0) {
 } else {
     $id = $nivel = $kda = "—";
 }
+
+// ------------------ BÚSQUEDA DE MATCHCODE ------------------ //
+$nombreAliado = ""; 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $matchcode = $_POST['matchcode'];
+
+    
+    $sql_aliado = "SELECT usuario FROM jugadores WHERE id = '$matchcode' LIMIT 1";
+    $resultado_aliado = $conexion->query($sql_aliado);
+
+   
+    if ($resultado_aliado->num_rows > 0) {
+        $fila_aliado = $resultado_aliado->fetch_assoc();
+        $nombreAliado = $fila_aliado['usuario'];
+    } else {
+        $nombreAliado = "No existe un jugador con ese MatchCode.";
+    }
+}
 ?>
+
+
+
+
+
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -37,12 +66,27 @@ if ($resultado->num_rows > 0) {
     <h2>Bienvenido <?php echo $usuario; ?> a MatchKILL</h2>
 </header>
 
+      <!--------------------------------------------------Arriba IZQ-------------------------------------------------->
+
 <main>
     <aside>
         <p><strong>MATCHCODE -</strong> <?php echo $id; ?></p>
 
-        <input type="text" placeholder="ingresar matchcode aliado">
+            <form method="POST" action="">
+            <input type="number" name="matchcode" placeholder="ingresar matchcode aliado">
+            <button type="submit">Buscar</button>
+            </form>
 
+            <p>
+            <?php 
+                if (!empty($nombreAliado)) {
+                    echo "Aliado encontrado: " . htmlspecialchars($nombreAliado);
+                }
+            ?>
+            </p>
+
+            </form>
+<!-----------------------------------------------MEDIO IZQ----------------------------------------------------->
         <p>+</p>
 
         <div class="estadisticas">
@@ -55,12 +99,14 @@ if ($resultado->num_rows > 0) {
         <button>BUSCAR PARTIDA</button>
 
 
-        <div >
-            <p><a href="../login/index.html">Usar otra cuenta</a></p>
+        <div class>
+
+            <P><a href="../login/index.html">Usar otra cuenta</a></P>
+
         </div>
     </aside>
 
-
+<!-------------------------------------------------CARROUSEL BOOTSTRAP--------------------------------------------------->
     <section class="contenido">
         <div class="highlights">
             <h3>Highlights</h3>
