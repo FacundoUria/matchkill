@@ -15,9 +15,9 @@ if ($conn->connect_error) {
 
 $sql = "CREATE DATABASE IF NOT EXISTS matchkill";
 if ($conn->query($sql) === TRUE) {
-    echo "✅ Base de datos 'matchkill' creada o ya existente.<br>";
+    echo " Base de datos 'matchkill' creada o ya existente.<br>";
 } else {
-    echo "❌ Error al crear la base de datos: " . $conn->error . "<br>";
+    echo " Error al crear la base de datos: " . $conn->error . "<br>";
 }
 
 
@@ -33,9 +33,9 @@ $sql = "CREATE TABLE IF NOT EXISTS jugadores (
 )";
 
 if ($conn->query($sql) === TRUE) {
-    echo "✅ Tabla 'jugadores' creada o ya existente.<br>";
+    echo " Tabla 'jugadores' creada o ya existente.<br>";
 } else {
-    echo "❌ Error al crear la tabla: " . $conn->error . "<br>";
+    echo " Error al crear la tabla: " . $conn->error . "<br>";
 }
 
 // Insertar datos 
@@ -55,11 +55,11 @@ $sql = "INSERT INTO jugadores (id, usuario, contraseña, nivel, kda) VALUES
 ON DUPLICATE KEY UPDATE usuario=VALUES(usuario), contraseña=VALUES(contraseña), nivel=VALUES(nivel), kda=VALUES(kda)";
 
 if ($conn->query($sql) === TRUE) {
-    echo "✅ Datos insertados correctamente.<br>";
+    echo " Datos insertados correctamente.<br>";
 } else {
-    echo "❌ Error al insertar datos: " . $conn->error . "<br>";
+    echo " Error al insertar datos: " . $conn->error . "<br>";
 }
 
 $conn->close();
-echo "<br>🎉 Base de datos y tabla creadas correctamente.";
+echo "<br> Base de datos y tabla creadas correctamente.";
 ?>
